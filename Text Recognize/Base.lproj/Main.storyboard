@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Text_Recognize" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Z3-5W-JwA">
+                                <rect key="frame" x="67" y="28" width="240" height="283"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="283" id="eB9-hK-Ogb"/>
+                                    <constraint firstAttribute="width" constant="240" id="eLo-CU-Tf2"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-8r-yN4">
+                                <rect key="frame" x="138" y="331" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="gGv-iM-SMm"/>
+                                </constraints>
+                                <state key="normal" title="Choose Image"/>
+                                <connections>
+                                    <action selector="chooseImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0n-aV-WaD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODU-It-MIl">
+                                <rect key="frame" x="170" y="369" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3ci-NT-Hnf"/>
+                                    <constraint firstAttribute="width" constant="35" id="Zmp-qb-URf"/>
+                                </constraints>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <action selector="scanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8e-Fy-A3G"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eDK-nG-u8b">
+                                <rect key="frame" x="16" y="407" width="343" height="228"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="AfI-Mm-Nz0"/>
+                                    <constraint firstAttribute="height" constant="228" id="vbj-Pf-MVB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eDK-nG-u8b" firstAttribute="top" secondItem="ODU-It-MIl" secondAttribute="bottom" constant="8" id="0yg-xn-ydG"/>
+                            <constraint firstItem="ODU-It-MIl" firstAttribute="top" secondItem="v2I-8r-yN4" secondAttribute="bottom" constant="8" id="19x-CY-ze1"/>
+                            <constraint firstItem="eDK-nG-u8b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5FP-7K-cDO"/>
+                            <constraint firstItem="ODU-It-MIl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NuW-uO-qvM"/>
+                            <constraint firstItem="v2I-8r-yN4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rpu-jS-Vxc"/>
+                            <constraint firstItem="4Z3-5W-JwA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="bcW-I3-nt9"/>
+                            <constraint firstItem="v2I-8r-yN4" firstAttribute="top" secondItem="4Z3-5W-JwA" secondAttribute="bottom" constant="20" id="bdd-NG-YQJ"/>
+                            <constraint firstItem="4Z3-5W-JwA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ngf-YF-YOu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="4Z3-5W-JwA" id="9o2-Ha-l8V"/>
+                        <outlet property="textView" destination="eDK-nG-u8b" id="Z2b-BC-LJ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
